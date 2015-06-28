@@ -24,16 +24,18 @@ int main(int argc, char** argv) {
     //Insert XIA_type vaules to this CuckooFilter
     int fclose(FILE *a_file);
     FILE *fp;
-    fp=fopen("/Users/Pranav/Desktop/input_xia.txt", "r");
+    fp=fopen("input_xia.txt", "r"); //add the path for XIA_type vaules
     size_t num_inserted = 0;
-    while(1) {
+    while(1){
         char i = fgetc(fp);
         num_inserted++ ;
         if (filter.Add(i) != cuckoofilter::Ok) {
             break;
         }
     }
+
     // Insert items to this cuckoo filter
+   //Supresed for tesing
   /*  size_t num_inserted = 0;
     for (size_t i = 0; i < total_items; i++, num_inserted++) {
         if (filter.Add(i) != cuckoofilter::Ok) {
